@@ -112,16 +112,12 @@ public class Application {
         // -------------------------------------------------ESERCIZIO 4--------------------------------------------------------
         System.out.println("----------------------LISTA PRODOTTI DI CLIENTI TIER 2 ORDINATI TRA 01/02 E 01/04 2021--------------------------");
 
-        ordersList.stream().filter(order -> order.getCustomer().getTier() == 2 &&
-                        order.getOrderDate().isAfter(LocalDate.parse("2021-02-01")) &&
-                        order.getOrderDate().isBefore(LocalDate.parse("2021-04-01")))
-                .flatMap(order -> order.getProducts().stream())
-                .collect(Collectors.toList());
-
-        System.out.println("Prodotti ordinati da clienti di livello 2 tra l'01-Feb-2021 e l'01-Apr-2021:");
-        tier2Products.forEach(System.out::println);
+//
 
 
+        List<Order> ordersDate = ordersList.stream().filter(order -> order.getCustomer().getTier() == 2 &&  order.getOrderDate().isAfter(LocalDate.of(2021, 12, 1)) &&
+                order.getDeliveryDate().isBefore(LocalDate.of(2022, 4, 1))).toList();
+        System.out.println(ordersDate);
 
 
 

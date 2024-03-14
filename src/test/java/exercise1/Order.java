@@ -14,6 +14,7 @@ public class Order {
 
         private List<Product> products;
         private Customer customer;
+        private int tier;
 
 
     public Order(Customer customer) {
@@ -24,6 +25,7 @@ public class Order {
         this.deliveryDate = LocalDate.now().plusWeeks(1);
         this.products = new ArrayList<>();
         this.customer = customer;
+        this.tier=tier;
     }
 
         public Customer getCustomer() {
@@ -52,7 +54,21 @@ public List<Product> getProducts() {
 }
 
 
-    public String getOrderDate() {
-        return getOrderDate();
+
+
+    public int getTier() {
+        return tier;
     }
+
+    public LocalDate getDeliveryDate() {
+        // Restituisci la data di consegna dell'ordine
+        return this.deliveryDate;
     }
+
+
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+}

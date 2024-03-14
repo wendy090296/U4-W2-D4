@@ -1,5 +1,6 @@
 package exercise1;
 
+import java.time.LocalDate;
 import java.util.Random;
 
 public class Customer {
@@ -28,6 +29,10 @@ public class Customer {
     public Integer getTier() {
             return tier;
         }
+
+//    public String getOrderDate() {
+//        return getOrderDate();
+//    }
     }
 
 
